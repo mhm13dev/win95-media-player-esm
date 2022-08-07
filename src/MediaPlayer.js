@@ -1,6 +1,6 @@
 import React from 'react';
 import { PlayerContextProvider } from '@cassette/core';
-import MediaPlayerUI from './MediaPlayerUI';
+import { MediaPlayerUI } from './MediaPlayerUI';
 
 export class MediaPlayer extends React.Component {
   render() {
