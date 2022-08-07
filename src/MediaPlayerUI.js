@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { FullscreenContextProvider } from '@cassette/core';
 import MediaPlayerView from './components/MediaPlayerView';
 
-class MediaPlayerUI extends React.PureComponent {
+export class MediaPlayerUI extends React.PureComponent {
   render() {
     const {
       getDisplayText,
@@ -44,5 +44,3 @@ MediaPlayerUI.defaultProps = {
   showVideo: false,
   fullscreenEnabled: false
 };
-
-export default MediaPlayerUI;
