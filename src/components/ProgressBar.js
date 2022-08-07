@@ -1,8 +1,8 @@
-import React from 'react'
-import { MediaProgressBar } from '@cassette/components'
-import { themes } from 'react95'
-import ResizeObserver from 'resize-observer-polyfill'
-import ProgressRuler from './ProgressRuler'
+import React from 'react';
+import { MediaProgressBar } from '@cassette/components';
+import { themes } from 'react95';
+import ResizeObserver from 'resize-observer-polyfill';
+import ProgressRuler from './ProgressRuler';
 
 const progressMargin = 10;
 

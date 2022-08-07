@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import audio from '../icons/audio.png';
@@ -38,7 +38,7 @@ const imgs = {
   maximize,
   minimize,
   unmaximize,
-  x,
+  x
 };
 
 class Icon extends React.PureComponent {

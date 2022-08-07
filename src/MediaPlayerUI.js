@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import PropTypes from 'prop-types';
 import { FullscreenContextProvider } from '@cassette/core';
 import MediaPlayerView from './components/MediaPlayerView';

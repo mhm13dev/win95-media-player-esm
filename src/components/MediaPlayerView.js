@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 import PropTypes from 'prop-types';
-import { playerContextFilter, PlayerPropTypes } from '@cassette/core'
-import { VideoDisplay } from '@cassette/components'
+import { playerContextFilter, PlayerPropTypes } from '@cassette/core';
+import { VideoDisplay } from '@cassette/components';
 import {
   themes,
   Window,
@@ -11,16 +11,16 @@ import {
   Button,
   Cutout,
   Divider
-} from 'react95'
-import { ThemeProvider } from 'styled-components'
-import ResizeObserver from 'resize-observer-polyfill'
-import ProgressBar from './ProgressBar'
-import MediaBtn from './MediaBtn'
-import SeekButton from './SeekButton'
-import Icon from './Icon'
-import SimpleDivider from './SimpleDivider'
-import VerticalDivider from './VerticalDivider'
-import convertToTime from '../utils/convertToTime'
+} from 'react95';
+import { ThemeProvider } from 'styled-components';
+import ResizeObserver from 'resize-observer-polyfill';
+import ProgressBar from './ProgressBar';
+import MediaBtn from './MediaBtn';
+import SeekButton from './SeekButton';
+import Icon from './Icon';
+import SimpleDivider from './SimpleDivider';
+import VerticalDivider from './VerticalDivider';
+import convertToTime from '../utils/convertToTime';
 
 const windowHeaderStyle = {
   padding: 0,

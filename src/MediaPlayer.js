@@ -1,7 +1,6 @@
-import React from "react";
-import { PlayerContextProvider } from "@cassette/core"
-import MediaPlayerUI from "./MediaPlayerUI";
-
+import React from 'react';
+import { PlayerContextProvider } from '@cassette/core';
+import MediaPlayerUI from './MediaPlayerUI';
 
 class MediaPlayer extends React.Component {
   render() {

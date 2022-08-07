@@ -1,5 +1,5 @@
 {
-  "name": "win95-media-player",
+  "name": "win95-media-player-esm",
   "version": "0.1.0",
   "description": "Back from 1995, and running on your website",
   "main": "lib/index.js",
@@ -25,7 +25,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/benwiley4000/win95-media-player.git"
+    "url": "git+https://github.com/mhm13dev/win95-media-player-esm.git"
   },
   "engines": {
     "node": ">=6.0.0",
@@ -54,15 +54,16 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/benwiley4000/win95-media-player/issues"
+    "url": "https://github.com/mhm13dev/win95-media-player-esm/issues"
   },
-  "homepage": "https://github.com/benwiley4000/win95-media-player#readme",
+  "homepage": "https://github.com/mhm13dev/win95-media-player-esm#readme",
   "peerDependencies": {
     "react": "^16.3.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.3",
     "@babel/core": "^7.4.3",
+    "@babel/plugin-proposal-export-namespace-from": "^7.18.9",
     "@babel/preset-env": "^7.4.3",
     "@babel/preset-react": "^7.0.0",
     "babel-eslint": "^10.0.1",
