@@ -98,7 +98,10 @@ The UI component used by `MediaPlayer`. If you're building a more complex media 
 | `showVideo`      | Boolean   | `false`                                       | A boolean which must be set `true` to display video                                                                                                          |
 | `fullscreenEnabled` |	Boolean	| `false`	| If set `true`, adds a maximize button to the title bar which will trigger fullscreen mode |
 | `className` | String |  | An optional CSS class name to pass to the outer window div |
+| `dragHandlerClassName` | String |  | An optional CSS class name which will added on Window Header |
 | `style` | Object |  | An optional React style object to pass to the outer window div |
+| `minimizeClickHandler` | Function |  | Click handler that will be executed when minimze button is clicked |
+| `closeClickHandler` | Function |  | Click handler that will be executed when close button is clicked |
 
 ## special thanks
 

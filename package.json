@@ -1,6 +1,6 @@
 {
   "name": "win95-media-player-esm",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "Back from 1995, and running on your website",
   "main": "lib/index.js",
   "scripts": {

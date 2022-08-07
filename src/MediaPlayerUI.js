@@ -10,7 +10,10 @@ export class MediaPlayerUI extends React.PureComponent {
       showVideo,
       fullscreenEnabled,
       className,
-      style
+      dragHandlerClassName,
+      style,
+      closeClickHandler,
+      minimizeClickHandler
     } = this.props;
     return (
       <FullscreenContextProvider fullscreenEnabled={fullscreenEnabled}>
@@ -19,7 +22,10 @@ export class MediaPlayerUI extends React.PureComponent {
           showVideo={showVideo}
           fullscreenEnabled={fullscreenEnabled}
           className={className}
+          dragHandlerClassName={dragHandlerClassName}
           style={style}
+          closeClickHandler={closeClickHandler}
+          minimizeClickHandler={minimizeClickHandler}
         />
       </FullscreenContextProvider>
     );
@@ -31,7 +37,10 @@ MediaPlayerUI.propTypes = {
   showVideo: PropTypes.bool.isRequired,
   fullscreenEnabled: PropTypes.bool.isRequired,
   className: PropTypes.string,
-  style: PropTypes.object
+  dragHandlerClassName: PropTypes.string,
+  style: PropTypes.object,
+  minimizeClickHandler: PropTypes.func,
+  closeClickHandler: PropTypes.func
 };
 
 MediaPlayerUI.defaultProps = {

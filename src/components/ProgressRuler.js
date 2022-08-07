@@ -86,7 +86,7 @@ class ProgressRuler extends React.PureComponent {
           key={`${time}-${index}`}
           style={{
             position: 'absolute',
-            left: time * widthOverTime || 'auto'
+            left: !isNaN(time * widthOverTime) ? time * widthOverTime : 'auto'
           }}
         >
           {tickMark}

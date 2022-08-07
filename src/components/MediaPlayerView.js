@@ -9,10 +9,9 @@ import {
   WindowContent,
   Toolbar,
   Button,
-  Cutout,
   Divider
 } from 'react95';
-import { ThemeProvider } from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 import ResizeObserver from 'resize-observer-polyfill';
 import ProgressBar from './ProgressBar';
 import MediaBtn from './MediaBtn';
@@ -47,6 +46,19 @@ const scrollButtonStyle = {
   width: 11,
   height: 13
 };
+
+const CurrentTimeBox = styled.div`
+  position: relative;
+  box-sizing: border-box;
+  padding: 2px;
+  border-style: solid;
+  border-width: 2px;
+  border-left-color: #888c8f;
+  border-top-color: #888c8f;
+  border-right-color: #ffffff;
+  border-bottom-color: #ffffff;
+  flex-grow: 1;
+`;
 
 const scrollInterval = 1 / 30;
 
@@ -92,6 +104,7 @@ class MediaPlayerView extends React.PureComponent {
       showVideo,
       fullscreenEnabled,
       className,
+      dragHandlerClassName,
       style,
       fullscreen,
       requestFullscreen,
@@ -102,7 +115,9 @@ class MediaPlayerView extends React.PureComponent {
       currentTime,
       onTogglePause,
       onBackSkip,
-      onForwardSkip
+      onForwardSkip,
+      closeClickHandler,
+      minimizeClickHandler
     } = this.props;
     const { width } = this.state;
     return (
@@ -130,7 +145,10 @@ class MediaPlayerView extends React.PureComponent {
               height: fullscreen ? '100%' : undefined
             }}
           >
-            <WindowHeader style={windowHeaderStyle}>
+            <WindowHeader
+              style={windowHeaderStyle}
+              className={dragHandlerClassName}
+            >
               <Toolbar style={headerToolbarStyle}>
                 <TinySpacer />
                 <Icon name={showVideo ? 'video' : 'audio'} />
@@ -140,7 +158,8 @@ class MediaPlayerView extends React.PureComponent {
                     flexGrow: 1,
                     whiteSpace: 'nowrap',
                     textOverflow: 'ellipsis',
-                    overflow: 'hidden'
+                    overflow: 'hidden',
+                    userSelect: 'none'
                   }}
                 >
                   {getDisplayText(playlist[activeTrackIndex])}
@@ -150,7 +169,7 @@ class MediaPlayerView extends React.PureComponent {
                   title="Minimize"
                   icon="minimize"
                   style={titleBarButtonStyle}
-                  disabled
+                  onClick={minimizeClickHandler || (() => {})}
                 />
                 <MediaBtn
                   title="Fullscreen"
@@ -166,7 +185,7 @@ class MediaPlayerView extends React.PureComponent {
                   title="Close"
                   icon="x"
                   style={titleBarButtonStyle}
-                  disabled
+                  onClick={closeClickHandler || (() => {})}
                 />
                 <TinySpacer />
               </Toolbar>
@@ -251,11 +270,11 @@ class MediaPlayerView extends React.PureComponent {
                 <Spacer />
                 <VerticalDivider />
                 <Spacer />
-                <Cutout shadow={false} style={{ flexGrow: 1 }}>
+                <CurrentTimeBox>
                   <span style={{ marginLeft: 2 }}>
                     {convertToTime(currentTime)}
                   </span>
-                </Cutout>
+                </CurrentTimeBox>
               </Toolbar>
             </WindowContent>
           </div>
@@ -270,6 +289,7 @@ MediaPlayerView.propTypes = {
   showVideo: PropTypes.bool.isRequired,
   fullscreenEnabled: PropTypes.bool.isRequired,
   className: PropTypes.string,
+  dragHandlerClassName: PropTypes.string,
   style: PropTypes.object,
   fullscreen: PropTypes.bool.isRequired,
   requestFullscreen: PropTypes.func.isRequired,
@@ -281,7 +301,9 @@ MediaPlayerView.propTypes = {
   onSeekComplete: PropTypes.func.isRequired,
   onTogglePause: PropTypes.func.isRequired,
   onBackSkip: PropTypes.func.isRequired,
-  onForwardSkip: PropTypes.func.isRequired
+  onForwardSkip: PropTypes.func.isRequired,
+  closeClickHandler: PropTypes.func,
+  minimizeClickHandler: PropTypes.func
 };
 
 export default playerContextFilter(MediaPlayerView, [

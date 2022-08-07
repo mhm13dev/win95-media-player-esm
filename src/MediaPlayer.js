@@ -9,7 +9,10 @@ export class MediaPlayer extends React.Component {
       showVideo,
       fullscreenEnabled,
       className,
+      dragHandlerClassName,
       style,
+      closeClickHandler,
+      minimizeClickHandler,
       ...rest
     } = this.props;
     return (
@@ -19,7 +22,10 @@ export class MediaPlayer extends React.Component {
           showVideo={showVideo}
           fullscreenEnabled={fullscreenEnabled}
           className={className}
+          dragHandlerClassName={dragHandlerClassName}
           style={style}
+          closeClickHandler={closeClickHandler}
+          minimizeClickHandler={minimizeClickHandler}
         />
       </PlayerContextProvider>
     );
