@@ -1,6 +1,6 @@
 {
   "name": "win95-media-player-esm",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Back from 1995, and running on your website",
   "main": "lib/index.js",
   "scripts": {
@@ -25,7 +25,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mhm13dev/win95-media-player-esm.git"
+    "url": "https://github.com/mhm13dev/win95-media-player-esm.git"
   },
   "engines": {
     "node": ">=6.0.0",
