@@ -170,12 +170,16 @@ class MediaPlayerView extends React.PureComponent {
                   icon="minimize"
                   style={titleBarButtonStyle}
                   onClick={minimizeClickHandler || (() => {})}
+                  onTouchStart={minimizeClickHandler || (() => {})}
                 />
                 <MediaBtn
                   title="Fullscreen"
                   icon={fullscreen ? 'unmaximize' : 'maximize'}
                   style={titleBarButtonStyle}
                   onClick={
+                    fullscreen ? requestExitFullscreen : requestFullscreen
+                  }
+                  onTouchStart={
                     fullscreen ? requestExitFullscreen : requestFullscreen
                   }
                   disabled={!fullscreenEnabled}
@@ -186,6 +190,7 @@ class MediaPlayerView extends React.PureComponent {
                   icon="x"
                   style={titleBarButtonStyle}
                   onClick={closeClickHandler || (() => {})}
+                  onTouchStart={closeClickHandler || (() => {})}
                 />
                 <TinySpacer />
               </Toolbar>
